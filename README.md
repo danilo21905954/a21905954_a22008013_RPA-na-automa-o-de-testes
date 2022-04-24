@@ -11,7 +11,7 @@ https://cloud.uipath.com/portal_/register
   
   ![image](https://user-images.githubusercontent.com/61801971/164992020-84d0843c-f562-48d3-9953-03045cbe2eca.png)
 
-Caso não consiga visualizar a mesma coisa click no link : https://cloud.uipath.com/
+Caso não consiga visualizar a mesma coisa carregue no link : https://cloud.uipath.com/
 
 Agora carregue no botão azul onde diz "DOWNLOAD UI PATH STUDIO"
 
@@ -56,5 +56,5 @@ Onde está a variável com o nome Path será necessário alterar o valor default
 
 Não se esqueça da contra barra ao fim.
 
-Agora basta carregar na seta por debaixo do botão play no canto superior esquerdo e clicar em "RUN"
+Agora basta carregar na seta por debaixo do botão play no canto superior esquerdo e carregue em "RUN"
 ![image](https://user-images.githubusercontent.com/61801971/164994316-99db11ea-095c-415e-b462-308c37edeb9b.png)
