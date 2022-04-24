@@ -46,4 +46,15 @@ Após aceitar encontrará uma interface semelhante a esta:
 
 ![image](https://user-images.githubusercontent.com/61801971/164993921-6452cecf-e3c8-4128-a36c-cfdb6ad198af.png)
 
-Para colocar o RPA em execução temos que realizar uma única mudança que é indicar o caminho para o ficheiro de input, para isso instale o ficheiro 
+Para colocar o RPA em execução temos que realizar uma única mudança que é indicar o caminho para o ficheiro de input, para isso baixe o ficheiro DRM.zip que se encontra nesse repositório, descompacte ele e coloque a pasta DRM no seu ambiente de trabalho.
+
+Abra novamente a interface do UIPath Studio, e na parte inferior, caso não esteja aberto, carregue em "Variables":
+![image](https://user-images.githubusercontent.com/61801971/164994152-bffd10e5-27b7-4ac7-9b29-374da5d5cd9d.png)
+
+Onde está a variável com o nome Path será necessário alterar o valor default para o caminho do ficheiro:
+![image](https://user-images.githubusercontent.com/61801971/164994258-17bd7da0-4517-46c6-ab9f-9e62d5478b52.png)
+
+Não se esqueça da contra barra ao fim.
+
+Agora basta carregar na seta por debaixo do botão play no canto superior esquerdo e clicar em "RUN"
+![image](https://user-images.githubusercontent.com/61801971/164994316-99db11ea-095c-415e-b462-308c37edeb9b.png)
