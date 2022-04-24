@@ -1,0 +1,411 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CheckNumberOfResponses" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_GetOneAnswer" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_response" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1410.4,2281.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>CheckNumberOfResponses_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="34">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="CheckNumberOfResponses" sap:VirtualizedContainerService.HintSize="996.8,2216.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="results" />
+      <Variable x:TypeArguments="x:String" Name="Response" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="count" />
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="find" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Pesquisa de Certificados - Sistema de Certificação Energética dos Edifícios" sap:VirtualizedContainerService.HintSize="955.2,2124" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="f8d54aa0-0053-472c-9f26-a729630d1c79" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="921.6,1907.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Int32" Name="NumberOfResults" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Pesquisar'" sap:VirtualizedContainerService.HintSize="880,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f8d54aa0-0053-472c-9f26-a729630d1c79" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.sce.pt/pesquisa-certificados/" DesignTimeRectangle="271, 735, 144, 50" ElementType="Button" FriendlyName="'Pesquisar'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' aaname='Pesquisar' check:text='Pesquisar' /&gt;" Guid="23349bfa-7d9e-480b-89c9-f111cb4e2fe6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJQAAAA2CAYAAAAh6LAxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAATqSURBVHhe7ZhBSyNJFMf3K8xnyScYP8CCR3OawzAIOycvDh48BQ8rDLgHZQ4eFj0oLIwwhDmMIOQSQeiDZBSiroaJLZGYaNIkthreVHdXdVd3VzQZXsy6/At+l+qX6sqrX1e/6t+clk0AcAGhACuhUNar1wD8MhAKsAKhACsQCrACoQArEAqwAqEAKxAKsAKhACsQCrACoQArEAqwAqEAKxAKsAKhACsQCrACoQArEAqwAqEAK2MSapWaB2fUTdAp5Kn6ezYVb39Jxyqcv3NabJZOl3epU2lTz3Gpd31FXTHmj4n4eIrS2zVqFm168GKdNrnFAl28Td/fWigE9yvm6fTJ/hzVi8HcmgtarM9w8/OZ26aO/1936SJjuC4w5seyqD4/QyVD/CgZk1B56lK/1qbWfHxR62V5ydAeCisyLkvVQlv2JtrtGdWnovE8SvMWPcjLsXZ/lbq/tX4WXLu2qPpk/wq1roPu7roWO+T8FLV9GSNad90gu+Cx/NztrDyrVGMWqk3OXzk6nfYQu9aJ6/eS851sLV4l7GFvU8ZG/Kt2tOlduvOjXOpu5IIkTqySIxe3V1wNx7Mya+Q4sn8/TxVvh5hYpEbZfH8WoYaZnyLzmTr3wXW/nWzTUTJGkM7PEl3uKXltakymfzMqxi5Ua07rn1O7huifjfrDhIW7kYFZ9dsrunkf9R/Nf6bGxjY1Pi5GsctywPsyXeqvEW0BO8taP4dQw8xPUlLjn9vk+vOyqWmQw5ifzLZQ12uJHI+Y/5ZQf36nnt8fT5xKWK+8GyRfEVsEsZD1II7u235tYk+9065HhK+eSiHxxOfophZcii0Oh1BDzC9ghhonQbi79YEu5avv7ltaPJNQpTCXQuDpePwoGbNQIgknqpAUxbHa3sVCH2vxKmGpVs5rYwqmNqlVka8t1epn1JiNL1woVPL3AuPTziKUYMD5+UwW5A4TPFylT3JiyTkIwvzU7SCX51Gt1jvIG1+To2LsQiVbr2JRLVGgDrZDRRy+l6e3sP6I74T9hcqGu8JIhJI8NT+Pyrer4JLaRcPXsUtO4vTY74Hz/sOhFvccjFkovSjXCuwExl0jgbEWyeSoWQl+S/ubUeyWHfSJ4vtCxfpExbq7oc2FQahh5me9WgxfvabW21vTYpP5ydLFntwFa7tU0eKeg7ELNUjBOJBQuiRhoZ2lmiWTq+9Gk6pgFSeu9Q9h/7EQRNVwsZNReFjQC2pt7Fgt1keoYea3oOofIY//jUxyKzsTh4lUfsL/581hJhr3GXhRQtG9llyJ+3UpiMtsUkcl/PYqqCUqUS3h/hNPbHVHqzPOvbpDLYFYmJ2kuNqOIeZwVxbxNRXvihOhvrP2eeUNMT+7aBLVG0M7hX6K7ml64MIxkp9ARszLEsrQYruWKHpvytEi+c07UX1ZNdQS7+jHxplWx8jmfWQ0fS2fWKLGQXrszqr8phTyeFH+5Pw0adyt5O6SDU97+jcp4w4+KXIcjhPtwqNmTEKNmiwdvelfkyU5nBI13JtFsVhyscUiOx//MMZ6Ih4/Uu8NxnDze0n8T4X6VbJU/WqTu7cZ+2wBBgdCAVYgFGAFQgFWIBRgBUIBViAUYAVCAVYgFGAFQgFWIBRgBUIBViAUYAVCAVYgFGAFQgFWIBRgBUIBViAUYCUlFAAcQCjAiE0/AT9jGAGFEReyAAAAAElFTkSuQmCC" InformativeScreenshot="1deefde24ffe37d57d277593ef6b4a56.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Pesquisa de Certificados - Sistema de Certificação Energética dos Edifícios' /&gt;" SearchSteps="FuzzySelector, Image">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="271, 735, 1375, 50" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;article&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div' idx='5' isleaf='1' parentid='frm_pesquisaCE' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' aaname='' isleaf='1' parentid='frm_pesquisaCE' tag='DIV' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="880,1615.2" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+              <ui:InterruptibleWhile.Body>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="844.8,1448" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NCheckState Exists="{x:Null}" sap2010:Annotation.AnnotationText="wait until the results appear" DisplayName="Check App State 'Resultados encontrados:'" sap:VirtualizedContainerService.HintSize="803.2,911.2" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="f8d54aa0-0053-472c-9f26-a729630d1c79" Timeout="1" Version="V1">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="375.2,661.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NGetText sap2010:Annotation.AnnotationText="Getting the string that has the response numbers" DisplayName="Get Text 'Resultados encontrados:'" sap:VirtualizedContainerService.HintSize="333.6,188.8" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="f8d54aa0-0053-472c-9f26-a729630d1c79" Version="V1">
+                          <uix:NGetText.Target>
+                            <uix:TargetAnchorable BrowserURL="https://www.sce.pt/pesquisa-certificados/" DesignTimeRectangle="271, 960, 1375, 23" ElementType="Text" FriendlyName="'Resultados encontrados:'" FullSelectorArgument="&lt;webctrl id='ce_numCertificados' tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='P' type='' /&gt;" Guid="aea52541-c84e-4319-9845-7fb9a3dc2344" ImageBase64="" InformativeScreenshot="ac3704b3191b498f34179e4f52e66327.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Pesquisa de Certificados - Sistema de Certificação Energética dos Edifícios' /&gt;" SearchSteps="Selector">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="271, 910, 144, 50" ElementType="Button" FriendlyName="'Pesquisar'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' aaname='Pesquisar' check:text='Pesquisar' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJQAAAA2CAYAAAAh6LAxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAS9SURBVHhe7ZhBT9tIFMf3m+wXySfobY/c+gk4cuPGjVu5ccvNp4KEVCoqRQKBkLZCVFUFWqWqqqAUNUIRWZbEcWy/fWPPjMf2hJDuC4HVf6TfZfwynsz8/ObZv/3z9w8CQAoIBUSBUEAUK9Twze8A/DIQCogCoYAoEAqIAqGAKBAKiAKhgCgQCogCoYAoEAqIAqGAKBAKiAKhgCgQCogCoYAoEAqIAqGAKBAKiAKhgChLEmqT4ps2pRWSq4Cit41afPS1HmtIvqw6sQ0an7coGQyIopAo7FGqxgzK4xlG77co7nYoVbHRgNLuPk3e1+8/PN3P79cNaDyzf5XHzOcWnzqxGfPNL+Nol5Lsv7Zo0vRcZ7zr8/OE4uMVGnniF8mShAoopWltQMlxeVPjvr7kaenVho5rUHTFG+VrMW/uXjGeYnR84p9D0qvdf3jRzq+FJxTN7N+ghF1RLb1wYuecn2HS0zHc0guP7MyD69PZeFKpjEdLEorlOVul8YGCs9at3onorLRxZsHS620d62Ay2kFLjxlSermaL2KwaTeXupt2vGFzi5JI9/c4u6gMEazxffz3FxFqnvkZmk1KEn1dtdtdCqsxTH191mlybeTtULxT/82iUA4plifUkdN/ZLIG9x8W/XbBbDbycGh+26P4Q9EfHjcpvtyl+ONaEXv+JYvk87J8jDgbmJw7/RJCzTM/zciMf8fHcjYvvxze9Wnu+td4wRiPnodQf55lvdWFsym938oX31DaBN7IoY5LuB5StcneK+d6gT16BvuVJ57rn/v8UmlzJISaY345K5yx8/C0/doefen3ung+oUZ2LVngg3L8IjEeLa2GSm9NIWmeQm680W7xa4Wqtn7gjMnsbfNemTNEtyHXJ4fljbNCVX/PeJ92EaGYR84vY4cL/iwgf7hGn3RWrc6Bsesz5DVUa3nn1Go3gfeYXBTGo+dTlA9OaFIpUB+XoQrCD/rtzdYf5Uw4XahGkRUWIZRm1vwU4+86JZksao/jkJLK2+O0B079h6eUSWE8egZFuVNgV/BmjQreWqTJR5h5WHvbRWy7k/dx8T0xsRlFsZ5eOnMREGqe+Q3f8AuCPnq97XrLia2uT4MLcj2B+1b5M8cTYDx6HjXUFB4llCuJLbR5cX/qxXWz0Y4pWPmN6+K17R8bQarFr31ZcAtqZ+xSLTZFqHnmd2rqH27ZNzJNrPsqLxO19bH/T81hpRj3CXhRQmU75S4wk35bz+OaXJ+YBY97eS2hPiDqlv5VXtio49QZd6ru4PF0U99u3NhSxuA5pH2OvzfxfASdu5l1ypE3x/yirh6g+tLgvoV+Ku7pe+DsGNVPIAvmZQnlaaWsxUVv3HdEUU29UX3d9NQSryi65E21dYxu6iOj72t5sE7xTX3s5LP+pmR5uCifOT9HmrRdzS6c0cyHTueblDeD7/Aa23GKLLxoliTUomlQ+G56TVYl3OPYd2u8WXqzlSgf//DGKhEfqvcex3zze0n8T4X6VRoUfeO3L/XF2XsdzAJCAVEgFBAFQgFRIBQQBUIBUSAUEAVCAVEgFBAFQgFRIBQQBUIBUSAUEAVCAVEgFBAFQgFRIBQQBUIBUSAUEKUmFAD/nR/0L2p14kDEqxXvAAAAAElFTkSuQmCC" SearchSteps="Selector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NGetText.Target>
+                          <uix:NGetText.Text>
+                            <OutArgument x:TypeArguments="x:String">[Response]</OutArgument>
+                          </uix:NGetText.Text>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NGetText>
+                        <Assign sap:VirtualizedContainerService.HintSize="333.6,61.6" sap2010:WorkflowViewState.IdRef="Assign_9">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[find]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <TryCatch sap2010:Annotation.AnnotationText="trying to pass a string to int to validate the number of responses" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="333.6,112.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <TryCatch.Try>
+                            <Assign sap2010:Annotation.AnnotationText="Convert string to int to find out how many results were found" sap:VirtualizedContainerService.HintSize="262.4,105.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Int32">[NumberOfResults]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(Response.Split(" "c)(2))]</InArgument>
+                              </Assign.Value>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Assign>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="s:FormatException" sap:VirtualizedContainerService.HintSize="400,163.2" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ActivityAction x:TypeArguments="s:FormatException">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:FormatException" Name="exception" />
+                                </ActivityAction.Argument>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Can't convert this string to Int. Impossible know how many answers had&quot;]" />
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                        </TryCatch>
+                        <If sap2010:Annotation.AnnotationText="Check the number of results" Condition="[NumberOfResults = 1]" sap:VirtualizedContainerService.HintSize="333.6,84" sap2010:WorkflowViewState.IdRef="If_1">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <Sequence DisplayName="if had one answer" sap:VirtualizedContainerService.HintSize="304,257.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign sap:VirtualizedContainerService.HintSize="262.4,61.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[out_GetOneAnswer]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign sap:VirtualizedContainerService.HintSize="262.4,61.6" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[out_response]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">MID01</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence DisplayName="if had zero or more than one" sap:VirtualizedContainerService.HintSize="693.6,512.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign sap:VirtualizedContainerService.HintSize="652,61.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[out_GetOneAnswer]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <If Condition="[NumberOfResults&gt;1]" sap:VirtualizedContainerService.HintSize="652,316.8" sap2010:WorkflowViewState.IdRef="If_2">
+                                <If.Then>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="304,156" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign sap:VirtualizedContainerService.HintSize="262.4,61.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[out_response]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">MID02</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="304,156" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign sap:VirtualizedContainerService.HintSize="262.4,61.6" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[out_response]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">MID03</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="375.2,492" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;Target does not appear&quot;]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:LogMessage>
+                        <Assign sap:VirtualizedContainerService.HintSize="333.6,61.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[out_GetOneAnswer]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign sap:VirtualizedContainerService.HintSize="333.6,61.6" sap2010:WorkflowViewState.IdRef="Assign_10">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[find]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign sap:VirtualizedContainerService.HintSize="333.6,61.6" sap2010:WorkflowViewState.IdRef="Assign_8">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[out_response]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">MID06</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.sce.pt/pesquisa-certificados/" DesignTimeRectangle="271, 918, 1375, 23" ElementType="Text" FriendlyName="'Resultados encontrados:'" FullSelectorArgument="&lt;webctrl id='ce_numCertificados' tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='P' type='' aaname=' Resultados encontrados: 1912581 (Apenas são apresentados os primeiros 1000 registos)' check:text='Resultados encontrados: 1912581 (Apenas são apresentados os primeiros 1000 registos)' /&gt;" Guid="9ab8aea5-48ec-4824-9672-943c2f6ffd9c" ImageBase64="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" InformativeScreenshot="302c327555a1fa254df7354fd3b8cc84.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Pesquisa de Certificados - Sistema de Certificação Energética dos Edifícios' /&gt;" SearchSteps="Selector">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="271, 868, 144, 50" ElementType="Button" FriendlyName="'Pesquisar'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' aaname='Pesquisar' check:text='Pesquisar' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJQAAAA2CAYAAAAh6LAxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAQhSURBVHhe7Zm/TxsxFMf7j/Qf4S9g7MbIX8DIxsbGyJaNLVuZqLqAugQhFamIUhERoaJIUDUCIRAIcjnf6/Od7bPvHMi1L4S2X0ufxffOMb6Pn3/w5u72ggCQAkIBUSAUEMUJ9dh6C8BvA6GAKBAKiAKhgCgQCogCoYAoEAqIAqGAKBAKiAKhgCgQCogCoYAoEAqIAqGAKBAKiAKhgCgQCogCoYAoEAqIMiOh2pRRpKQ3lJ2s0LASn16b57FyvlrGtpco7fe4HfNMl7sjUp35oD1LcrBN2cOjCeTy0CN1sFiP7XKbugw7NHq2fpXUsKjOul6spmH/NEP7G9QntRWPiY6P4rEcbNKoHX9nWsxeqJQ/aML4g8yS+FK5AVMm1iM7WzFxixzHdbYEbd6Q2i3b0yTuQ3HRfXCx3Ga3IpWIUM36V7CgvXAl6y9HYsaMjy23HyiJvDMtZixUOJDJST+vJepR6s0sN2B+Nqqyw9kmD+I29+ZM/SKp27yS6LJVxrY3KFOm3sk7R6Nz8/XUUfD7IkI16Z9lazPM5Pfb4e8bYuMzPDwylQNSO/V3psWrEupxt5PXVuubCcUZ5qBcQpK9DVInm6S+lLPbLSPJPqWmrmCdVFI8yrr2ozOiQj3fP/fs1Eyw633K8n5VxssQHZ+2lTH+zrR4PUK1Fyj1M4QX7wasWq7bLqa2pNzuk/q6SklkD+Ey0c1mZb82Vy4x/seREKpB/wqWSd0XoVru9Kd598daLbYu1DyN+oOirpptp8yMhYqXrB9mIjdg1T3UYCOIyze953bZNEVvTr8tBeI4oQIhC6KzXUQoZsL+5XyyGc1sxu0Sxlk16AMzdsLF9oNTZvZC2U15wgPLqV3tLdQGN/qRn+L9Io2OO3yCM+/pgT0slzAnVG3DOs0M5fFM/zT1Prbcvi87LOM0tQln474vBXEvwYyFmmx9n0So5Jj3GVc9PvWte0LOU3pl3r0qs5HbQ1WW1qZ7qKE9REwgVJP+PbbWXD+i5XIjmHTV8RmdmeVO7xFfcLnT/DNClZLwEvHR1vPeY8AzVhd/eRt3ynP7Dj5l+nc+405oNptx2+UHjgvVqH+f94s6Xfwl3l4zVPZFtfHx/r7s9L9a8hoK9eQ9FH9Iu4TYOP9u6XghaLPRPVSLDwxXHGNL0LYvmWbckjd5/9wGvLok+6J4GTQ24dzkeOEs9XcJFSt+1ordROvb78PIppep3ZTnhfsUuy3Xp7SJbrnHCcVM0r8gu4STIM9ol8UzfUK1skUzuHeH9ZJZakZCvUa8o3a+SX4XiQHPAaEqJAcdUqf1/yeCyYBQQBQIBUSBUEAUCAVEgVBAFAgFRIFQQBQIBUSBUEAUCAVEgVBAFAgFRIFQQBQIBUSBUEAUCAVEgVBAFAgFRKkJBcCfc0G/AIZLmcLJEF+jAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                  <Assign sap:VirtualizedContainerService.HintSize="803.2,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[count+1]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <If Condition="[count &gt; 15]" sap:VirtualizedContainerService.HintSize="803.2,304" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="241.6,115.2" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:Break sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Break_1" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="find = False" />
+              </ui:InterruptibleWhile.Condition>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InterruptibleWhile>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="e6134aa59df0a67c3dd1de070088c488.png" Selector="&lt;html app='chrome.exe' title='Pesquisa de Certificados - Sistema de Certificação Energética dos Edifícios'/&gt;" Url="https://www.sce.pt/pesquisa-certificados/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

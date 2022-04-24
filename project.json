@@ -45,7 +45,15 @@
         "editingStatus": "InProgress",
         "testCaseId": "61d6eb3c-d587-48ba-bc03-8033daf1b276",
         "dataVariationFilePath": ".variations\\BlankAllFields_Sheet1.json",
-        "fileName": "module\\TestCase.xaml"
+        "testCaseType": "TestCase",
+        "fileName": "test\\BlankAllFields_TestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "443538f6-a7be-4342-bec3-79820b5dd33c",
+        "dataVariationFilePath": ".variations\\CheckNumberOfAnswers_Sheet1.json",
+        "testCaseType": "TestCase",
+        "fileName": "test\\CheckNumberOfReponses_TestCase.xaml"
       }
     ],
     "modernBehavior": true

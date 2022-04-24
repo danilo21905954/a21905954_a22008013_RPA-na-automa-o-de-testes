@@ -1,0 +1,466 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="TestCase" this:TestCase.ANO_CONTRATAÇÃO="2016" this:TestCase.N_OPERAÇÃO="PT 0035263000001459085" this:TestCase.DATA_CONTRATAÇÃO="42663" this:TestCase.N_BEM="0081007182001001" this:TestCase.DATA_CRIAÇÃO_BEM="06/16/2009 00:00:00" this:TestCase.LOCALIDADE="LISBOA" this:TestCase.DESCRIÇÃO_TIPOLOGIA_BEM="T5" this:TestCase.DISTRITO="LISBOA" this:TestCase.CONCELHO="LISBOA" this:TestCase.FREGUESIA="EXTINTA (2013) - PENHA DE FRANCA" this:TestCase.ARTIGO_MATRICIAL="2" this:TestCase.N_REG_DESCRICAO_PREDIAL="345" this:TestCase.CONSERVATORIA="PREDIAL-LISBOA-1" this:TestCase.ARRUAMENTO="AV AFONSO COSTA" this:TestCase.NR_POLICIA="14" this:TestCase.NR_LOTE="1615" this:TestCase.NR_PISO_ANDAR="1" this:TestCase.PORTA___LETRA="B" this:TestCase.COD_POSTAL="1900031" this:TestCase.NIF="153245646" this:TestCase.N_CLIENTE_TITULAR_BEM="67616170" this:TestCase.NOME_TITULAR_BEM="CRISTINA MARIA DIAS FULGENCIO PARENTE" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="ANO_CONTRATAÇÃO" Type="InArgument(x:String)" />
+    <x:Property Name="N_OPERAÇÃO" Type="InArgument(x:String)" />
+    <x:Property Name="DATA_CONTRATAÇÃO" Type="InArgument(x:String)" />
+    <x:Property Name="N_BEM" Type="InArgument(x:String)" />
+    <x:Property Name="DATA_CRIAÇÃO_BEM" Type="InArgument(x:String)" />
+    <x:Property Name="LOCALIDADE" Type="InArgument(x:String)" />
+    <x:Property Name="DESCRIÇÃO_TIPOLOGIA_BEM" Type="InArgument(x:String)" />
+    <x:Property Name="DISTRITO" Type="InArgument(x:String)" />
+    <x:Property Name="CONCELHO" Type="InArgument(x:String)" />
+    <x:Property Name="FREGUESIA" Type="InArgument(x:String)" />
+    <x:Property Name="ARTIGO_MATRICIAL" Type="InArgument(x:String)" />
+    <x:Property Name="LETRA_FRAÇÃO_AUTONOMA" Type="InArgument(x:String)" />
+    <x:Property Name="N_REG_DESCRICAO_PREDIAL" Type="InArgument(x:String)" />
+    <x:Property Name="CONSERVATORIA" Type="InArgument(x:String)" />
+    <x:Property Name="ARRUAMENTO" Type="InArgument(x:String)" />
+    <x:Property Name="NR_POLICIA" Type="InArgument(x:String)" />
+    <x:Property Name="NR_LOTE" Type="InArgument(x:String)" />
+    <x:Property Name="NR_PISO_ANDAR" Type="InArgument(x:String)" />
+    <x:Property Name="PORTA___LETRA" Type="InArgument(x:String)" />
+    <x:Property Name="COD_POSTAL" Type="InArgument(x:String)" />
+    <x:Property Name="NIF" Type="InArgument(x:String)" />
+    <x:Property Name="N_CLIENTE_TITULAR_BEM" Type="InArgument(x:String)" />
+    <x:Property Name="NOME_TITULAR_BEM" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:TestCase.LETRA_FRAÇÃO_AUTONOMA>
+    <InArgument x:TypeArguments="x:String">
+      <Literal x:TypeArguments="x:String" Value="" />
+    </InArgument>
+  </this:TestCase.LETRA_FRAÇÃO_AUTONOMA>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1103.2,2028</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>TestCase_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="68">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Testing</x:String>
+      <x:String>UiPath.Testing.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.Testing</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="TestCase" sap:VirtualizedContainerService.HintSize="869.6,1963.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="828,68.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Pesquisa de Certificados - Sistema de Certificação Energética dos Edifícios" sap:VirtualizedContainerService.HintSize="433.6,1566.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="d926e989-e20c-4a3a-94f4-51c4eccbff62" Version="V1">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,1349.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Select &quot;CE&quot;&#xA;" ClickBeforeMode="Single" DisplayName="TIPO DE DOCUMENTO" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,96.8" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="d926e989-e20c-4a3a-94f4-51c4eccbff62" Text="CE" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.sce.pt/pesquisa-certificados/" DesignTimeRectangle="274, 223, 483, 50" ElementType="DropDown" FriendlyName="'Todos'" FullSelectorArgument="&lt;webctrl tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SELECT' type='' aaname='' /&gt;" Guid="d8b04918-7457-412f-b93c-a03f5c5f7d79" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAecAAAA2CAYAAAD9GFFqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAATASURBVHhe7dvRS1tXHMDx/U95CsiEssEe+lClmVJpngaFSmDbQ7UvKUhenBvoujJQhIbARkBwCBPBENkw4GUPUmig3UUICZUIJaGr77+dX4zx3Os1vTITj9334QN6zs8j+vL1JNdPjv85FAAA4A7iDACAY4gzAACOCcS5UX8te3sVKZW2ZXsbAAAMirZWm6vttVusenHWzZ2dstRrr+T9uzfnBgEAwNXR1mpztb3hQPfirPXWIXsTAAAMlrZXG2yv9eKs12tuzAAADJe2Vxtsr/XirK9/2xsAAGA4wg0mzgAAXDPiDACAY4gzAACOIc4AADiGOAMA4BjiDACAY4gzAACOIc4AADiGOAMA4BjiDACAY4gzAACOIc4AADjmo4xzs7Iii0sr4h1G7wMA4LKhxtlbTsnkvQ+Zlc1a9NfHVS8+kETigRQPovcBAHDZUOPs/z5vbrRnZu4nTESnZMZau4obL3EGANxkQ41zmLegcc6JF7H3XxBnAMBN5nacD8pSXO7eqJfz4l0Q23olL6udW/czKVaq4l8U5zjntX2pbul71idzhfVdqbcj5gAAGBBn4+yvZWQ0kZDRsYzklrIy/UXSzN6R7Ma+NVczZ9wx6925uYyM30rKqBGOc6zz2vtSzJj1kc8k/Tgn3z2eks9HEpKcmBfv6OwsAAD6efrj99I89CP3lO799PSHyD3lZpxfrkjahHR8oSyt0zVzo/2zE2Irun8tym0zN12ICKw9F/O85sa35vOUrL7ozqgXzzpfm7a/BwAAF9Aw66VxYiIVGWhd0z2d0dnwvnIyzt6SxjUrpbfB9ePGr/KN+WEmn3t958LvOcc9r76mXxeKs9Fq+NLk5gwAiKET3y/vmp6cD7QdZp2JirdyMM5VKT406w/zUg+sK3Mr/srsPVqTZp+5YJzjnmc+PyrL4sTpy9rzUtzaFZ8oAwAuKSrQccOsblic7b2riHPEXveBsNzXqc77zYlEUiafrInPQ2EAgEsIBzpumJWDcfZl85FZv7ci1cC6MjdbDeZC2Xxck9Jc9FwwznHPC+8Z7Zr4W1kZN7/M8eWTl74BAIjLDnTcMCsH42x+mPWMWZ+SwsvgeuuPnNw2N9lcudb5/CTC5+eqz/WvE+tBr1jnVeW3TFTEPVm92yfgAAD0cRrouGFWTsb5uL0rP4+ZvbFZKVT2pdnwxa8syrT+W1Mmf/YS81tz8w3M7YtXmO3cdO04xz1Pn9ZOmlinlzakeuBb5yVlZiPeLxQAgDCNctwwKzfjrI48KT5JmVjqjPpU0nN5qYYf0Pp7TbL6EFd3bvR+VjZ/yZmPrThf4jx/PSvpW6czxkhKskXv7F+wAAAYsGuNcyztWuem2/rAA1kt/askzpPVlzmvcfLyOQAAw+R+nAEA+J8hzgAAOIY4AwDgGOIMAIBjiDMAAI4hzgAAOIY4AwDgGOIMAIBjiDMAAI4hzgAAOIY4AwDgGOIMAIBjiDMAAI4hzgAAOObCOJdK2/L+3ZvAJgAAGCxtrzbYXuvFeW+vIvXaq8AmAAAYLG2vNthe68W5UX8tOzvlzhA3aAAABktbq83V9mqD7b1enJVuar31eq2vfwMAgMHQ1mpzw2FWgTgDAIDrdij/AugPir1VsUFCAAAAAElFTkSuQmCC" InformativeScreenshot="099b577a1bea2c933518caf94e900bf4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Pesquisa de Certificados - Sistema de Certificação Energética dos Edifícios' /&gt;" SearchSteps="FuzzySelector, Image">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="274, 179, 568, 44" FriendlyName="'TIPO DE'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;article&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;div' parentid='frm_pesquisaCE' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='frm_pesquisaCE' tag='DIV' aaname='TIPO DE DOCUMENTO &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' check:text='TIPO DE DOCUMENTO&amp;#xD;&amp;#xA;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#xD;&amp;#xA;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;DCR - Declaração de Conformidade Regulamentar&amp;#xD;&amp;#xA;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;PCE - Pré' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Select Distrito option" ClickBeforeMode="Single" DisplayName="Type Into 'ARTIGO MATRICIAL' Field" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,249.6" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="d926e989-e20c-4a3a-94f4-51c4eccbff62" Text="[ARTIGO_MATRICIAL]" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.sce.pt/pesquisa-certificados/" DesignTimeRectangle="271, 730, 206, 50" ElementType="InputBox" FriendlyName="'INPUT txtArtMatricial'" FullSelectorArgument="&lt;webctrl id='txtArtMatricial' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='txtArtMatricial' tag='INPUT' type='text' aaname='Artigo Matricial nº' /&gt;" Guid="ff95a755-873e-498e-943e-987f056a65fa" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANIAAAA2CAYAAACyTMfWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEkSURBVHhe7da7asNAFEXR/P8/SgIJ3NhqgvuJ72ArGNlBxKdcxYI7j3Yz83X9PjXgM0KCACFBwFNI62Vp8zy1YRiAP1Qn1csupNqcxrGt599D4LXqpPdyj2kLqRcmIjiseqluat5CqufqMQPHPLoREnxASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAgQEgQICQI2IU0z1Nbz8vTJeC96qW6qXkLab0sbRpHMcEB1Unv5dZNrbeQ+uFtswqr5wp4r//g7hHtQgL+49R+AFegpYjR4huBAAAAAElFTkSuQmCC" InformativeScreenshot="e901fb374f0bd836ca3ae7eda7d23451.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Pesquisa de Certificados - Sistema de Certificação Energética dos Edifícios' /&gt;" SearchSteps="FuzzySelector, Image">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="271, 689, 206, 38" ElementType="Text" FriendlyName="'Artigo Matricial nº'" FullSelectorArgument="&lt;webctrl aaname='Artigo Matricial nº' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Artigo Matricial nº' tag='LABEL' type='' check:text='Artigo Matricial nº' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Select Distrito option" ClickBeforeMode="Single" DisplayName="Type Into 'LETRA FRAÇÃO AUTONOMA' Field" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,249.6" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="d926e989-e20c-4a3a-94f4-51c4eccbff62" Text="[LETRA_FRAÇÃO_AUTONOMA]" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.sce.pt/pesquisa-certificados/" DesignTimeRectangle="482, 730, 206, 50" ElementType="InputBox" FriendlyName="'INPUT txtFracAutonoma'" FullSelectorArgument="&lt;webctrl id='txtFracAutonoma' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='txtFracAutonoma' tag='INPUT' type='text' aaname='Fração Autónoma' /&gt;" Guid="9332a30e-ebee-4bc6-8b02-67d8d7d94589" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANIAAAA2CAYAAACyTMfWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEmSURBVHhe7daxisMwFEXB/P8/2gYb0iRulu2VPIOFDQlZsrecYkDSU3uQLr8/1wb8j5AgQEgQcAppvS9tnqc2DAPwRjVSrRzb6SHVYBrHtt7OF4CzamRr5RBTD2mrTETwJ9VKNbPve0j1ZO1r4LNjM0KCLwkJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAEvQ5rnqa23pQ+A96qVambf95DW+9KmcRQTfFCNbK08m9nPekjbheegKqsnC3ht+70dIiqnkIBvXNsD5sel8voBzgcAAAAASUVORK5CYII=" InformativeScreenshot="aea936e3249690575affa60b946603ce.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Pesquisa de Certificados - Sistema de Certificação Energética dos Edifícios' /&gt;" SearchSteps="FuzzySelector, Image">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="482, 689, 206, 38" ElementType="Text" FriendlyName="'Fração Autónoma'" FullSelectorArgument="&lt;webctrl aaname='Fração Autónoma' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Fração Autónoma' tag='LABEL' type='' check:text='Fração Autónoma' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Select Distrito option" ClickBeforeMode="Single" DisplayName="Type Into 'SOB O Nº'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,249.6" sap2010:WorkflowViewState.IdRef="NTypeInto_12" ScopeIdentifier="d926e989-e20c-4a3a-94f4-51c4eccbff62" Text="[N_REG_DESCRICAO_PREDIAL]" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.sce.pt/pesquisa-certificados/" DesignTimeRectangle="1305, 639, 339, 50" ElementType="InputBox" FriendlyName="'INPUT txtSobONum'" FullSelectorArgument="&lt;webctrl id='txtSobONum' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='txtSobONum' tag='INPUT' type='text' aaname='Sob o nº' /&gt;" Guid="48f03cdd-b349-481d-92e0-2db4c485842e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAVcAAAA2CAYAAABz7tpTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFMSURBVHhe7dexasMwFIbRvv872gYHsiReSnc112BhQyhO8b+d4YCkq/lD+vr5vjcAriWuAAHiChBwiOvyvLV5ntowDACcVN2sfu572uNag2kc2/I4XgDgb9XNtZ+7wPa4ruUVVoB/qX5WR7d9j2s9bbc1AJ/bd1RcAS4irgAB4goQIK4AAeIKECCuAAHiChAgrgAB4goQIK4AAeIKECCuAAHiChAgrgAB4goQIK4AAeIKECCuAAHiChAgrgAB4goQIK4AAeIKECCuAAHiChAgrgAB4goQIK4AAeIKECCuAAHiChAgrgAB4goQIK4AAeIKECCuAAHiChAgrgAB4goQIK4AAeIKECCuAAHiChDwNq7zPLXlcesDAM6rflZHt32P6/K8tWkcBRbgQ9XNtZ+vjm5nPa7rhdegyltPWwDOWX/+u7CWQ1wBuMK9/QIRjN4w2rr7LQAAAABJRU5ErkJggg==" InformativeScreenshot="7e3bd67426e24b71f839ebc01ec29c4e.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Pesquisa de Certificados - Sistema de Certificação Energética dos Edifícios' /&gt;" SearchSteps="FuzzySelector, Image">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="1305, 597, 339, 38" ElementType="Text" FriendlyName="'Sob o nº'" FullSelectorArgument="&lt;webctrl aaname='Sob o nº' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Sob o nº' tag='LABEL' type='' check:text='Sob o nº' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAVcAAAAqCAYAAAAH+hizAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASUSURBVHhe7dy/SyNpAIfx+StMJyIcC8viFiI2siIionBC4BAFQQQR4UCLA1MIsRBzhbjFQqxkQMSFFVK5FgophBVSKKQIbEAkhWQFkS2O67/3zmSMkzG/8Hy5cDzFB3TeNy9M8/DmnVHn779+CADwuogrAFhAXAHAAuIKABYQVwCwgLgCgAXEFQAsIK4AYAFxBQALiCsAWEBcAcAC4goAFhBXALCAuAKABcQVACwgrgBgAXEFAAuIKwBYYDGuRWV3k0rtHqtcdxwA/r+ex/X6SB8XJzXY68hxuvTmw6yS7rFufkbmtZSXGzdrxNO6qTv+3yqfb2l+oLtyjxPL+lyoPw8AXqImrg/ZhAYdRzET1JR7oJOvB3I3ZzUcM9dm0iqE5rbWwXHN72jcRHV6+1iF63N9/qNfTmxVJ/d15gLAC4TimlN6zMRwbOdZRB+jO76bq7neXOfG9cadlDMSus/7I62Y+1s7rZ0HAC8ViuuxkiYwzvpxzYQKE94RMzazVxvK62O520mlNo3ttLLXobFQXAu3OWW881d/3p6ubsPzmmi6fh35A39uJm++9puf097njI+H5zXnvtn1aPQr9z7l5qtzAODfeL5z7TNfj9uIX2F/Vj0mSD0Ds1rZXNb02y45Tr+WvjzuboO49g1puNc711zQyuKo3sTMtVhcboszztbr12F22I4XyZm4Yr39ml9dDs5VHQ1unOkhmPds53p7oCUzh50rgNdS98zV6R3V0vaBrkqlmslV/pmlCZbZ5T4Gy387YL3fhGxS7nfv9yCuJojJbGid2yOt9Znrc3uN3yJoa/06grj658PVB3AlZRPvzPXlpzPV72lNOV0a3zD3eHkmlzNXAK+sJq6+6yOlfvtFMS+yXqjexpWMfK2+2PB2kaFYPSrtad58ZviTt7tsfOZa+DRkPr+gTIMdcnvrR8Y8QVyjO1B/pxqJ8sNlWisT3n12a3AuoQxvCwB4Rc/j+ui+qKvMjlaC0MY+JJS988aaPajKyf3VjC0emBg3mXe6amL3Tqlvkeu+dtePjhlBXJPZ2uv14goANjWOa0j5tHJc8P7PM/N7s/iFx5rMaxDBinbXj44ZxBVAh6jGtfxlWcMjs3LzzydVd4x+1IrKLJqfww+Eqs6U9B5Y+W8cNA7hzX68SezaXT86ZhBXAB3iaeea26q8y1rvPPP+SGte1IKv4+XDWROrUaUjIX4wX/ffO11a++o9wAri2pdQtubstKjPc971pC5Cnw1rb/3aMR9xBdAhQscCpeBpfLemNvd0USiqfFtU4dueUnHvdaZ+Jc8fo3am1IAJ5MCC0tlcZV52S9M1f8kVxNXELjaRUOYyr/L1uTIbo4p5fx213+yd0nbWr4O4AugQkTPXkq4OE8E7pZUwenrGluXmiqF5xt253N+Hqm8VeFEeX03ryn/o5QniupjWyXa88n5rMG9q++md04Zarl8HcQXQIRo/0Lqr7FzLrd79/Fny5z20/Mcu7c6LaHt9AOgcjeMKAHgx4goAFhBXALCAuAKABcQVACwgrgBgAXEFAAuIKwBYQFwB4NX90D8mGluUd/l3fgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Concatenate the entire address and enter in the field" ClickBeforeMode="Single" DisplayName="MORADA" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,249.6" sap2010:WorkflowViewState.IdRef="NTypeInto_13" ScopeIdentifier="d926e989-e20c-4a3a-94f4-51c4eccbff62" Text="[ARRUAMENTO+&quot; &quot;+NR_POLICIA+&quot; &quot;+NR_LOTE+&quot; &quot;+NR_PISO_ANDAR+&quot; &quot;+PORTA___LETRA]" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.sce.pt/pesquisa-certificados/" DesignTimeRectangle="274, 431, 1370, 50" ElementType="InputBox" FriendlyName="'INPUT txtMoradaCE'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' aaname='Morada &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;Opte por pesquisar &amp;quot;Liberdade&amp;quot; em vez de &amp;quot;Av. da Liberdade&amp;quot;, ou  &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;quot;António Loureiro Borges&amp;quot;, em vez de  R. Dr. António Loureiro Borges. &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' /&gt;" Guid="695f1349-df5b-4d36-9111-0c4a66bc2a62" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABV4AAAA2CAYAAAA/IoIbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAI1SURBVHhe7dxBaoRAEIbR3P+OKijMZnQTsu+kBDsKCRnJv3yLB91UneCj6beP90cDAAAAACBHeAUAAAAACBNeAQAAAADCLuF1W5c2z1MbhgEAAAAAgBdUU622em6tPbzWYBrHtj2vCwAAAAAA/K6a6t5WT/G1h9e9yoquAAAAAAC3VVutxnrce3itJ7HHGQAAAACAe86NVXgFAAAAAAgQXgEAAAAAwoRXAAAAAIAw4RUAAAAAIEx4BQAAAAAIE14BAAAAAMKEVwAAAACAMOEVAAAAACBMeAUAAAAACBNeAQAAAADChFcAAAAAgDDhFQAAAAAgTHgFAAAAAAgTXgEAAAAAwoRXAAAAAIAw4RUAAAAAIEx4BQAAAAAIE14BAAAAAMKEVwAAAACAMOEVAAAAACBMeAUAAAAACBNeAQAAAADChFcAAAAAgDDhFQAAAAAgTHgFAAAAAAgTXgEAAAAAwoRXAAAAAIAw4RUAAAAAIEx4BQAAAAAIE14BAAAAAMKEVwAAAACAMOEVAAAAACBMeAUAAAAACBNeAQAAAADChFcAAAAAgDDhFQAAAAAgTHgFAAAAAAgTXgEAAAAAwoRXAAAAAIAw4RUAAAAAIEx4BQAAAAAIE14BAAAAAMKEVwAAAACAsB/D6zxPbXsufQAAAAAAwGuqrVZjPe49vG7r0qZxFF8BAAAAAG6oprq31fW7rfbwui98DarK1pNYAAAAAAD+tv8mcIqu5RJeAQAAAAD4r0f7BBgdRVC/hKSXAAAAAElFTkSuQmCC" InformativeScreenshot="fa4ea03d6b914178b10ed2425327f854.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Pesquisa de Certificados - Sistema de Certificação Energética dos Edifícios' /&gt;" SearchSteps="FuzzySelector, Image">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="274, 389, 1370, 38" ElementType="Text" FriendlyName="'Morada Opte'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' aaname='Morada &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' check:text='Morada&amp;#xD;&amp;#xA;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#xD;&amp;#xA;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#xD;&amp;#xA;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;Opte por pesquisar &amp;quot;Liberdade&amp;quot; em vez de &amp;quot;Av. da Liberdade&amp;quot;, ou &amp;#xD;&amp;#xA;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="0777fb10738cb60c7eea2242725edfb6.png" Selector="&lt;html app='chrome.exe' title='Pesquisa de Certificados - Sistema de Certificação Energética dos Edifícios'/&gt;" Url="https://www.sce.pt/pesquisa-certificados/" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="828,68.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke BlankAllFields workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="module\BlankAllFields.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+    </Sequence>
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="828,1652.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Pesquisa de Certificados - Sistema de Certificação Energética dos Edifícios" sap:VirtualizedContainerService.HintSize="786.4,1560" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="d926e989-e20c-4a3a-94f4-51c4eccbff62" Version="V1">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="752.8,1343.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="morada_output" />
+                <Variable x:TypeArguments="x:String" Name="sob_output" />
+                <Variable x:TypeArguments="x:String" Name="artigomatricial_output" />
+                <Variable x:TypeArguments="x:String" Name="fracao_output" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uta:VerifyControlAttribute AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Control Attribute" sap:VirtualizedContainerService.HintSize="711.2,282.4" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_1" Operator="Equality" OutputArgument="Result" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                <uta:VerifyControlAttribute.ActivityToTest>
+                  <ActivityAction>
+                    <uix:NGetAttribute Attribute="text" DisplayName="Get Attribute 'Morada Opte'" sap:VirtualizedContainerService.HintSize="333.6,208" sap2010:WorkflowViewState.IdRef="NGetAttribute_1" ScopeIdentifier="d926e989-e20c-4a3a-94f4-51c4eccbff62" Version="V1">
+                      <uix:NGetAttribute.OutUiElement>
+                        <OutArgument x:TypeArguments="ui:UiElement">
+                          <VariableReference x:TypeArguments="ui:UiElement">
+                            <VariableReference.Variable>
+                              <Variable x:TypeArguments="ui:UiElement" Name="_autogenerated_OutUiElement" />
+                            </VariableReference.Variable>
+                          </VariableReference>
+                        </OutArgument>
+                      </uix:NGetAttribute.OutUiElement>
+                      <uix:NGetAttribute.Result>
+                        <OutArgument x:TypeArguments="x:String">[morada_output]</OutArgument>
+                      </uix:NGetAttribute.Result>
+                      <uix:NGetAttribute.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.sce.pt/pesquisa-certificados/" DesignTimeRectangle="274, 301, 1370, 50" ElementType="InputBox" FriendlyName="'AV AFONSO COSTA'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' aaname='Morada &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;Opte por pesquisar &amp;quot;Liberdade&amp;quot; em vez de &amp;quot;Av. da Liberdade&amp;quot;, ou  &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;quot;António Loureiro Borges&amp;quot;, em vez de  R. Dr. António Loureiro Borges. &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' /&gt;" Guid="06e01214-5fc5-40ce-ad6c-5bb1e1f3aa2d" ImageBase64="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" InformativeScreenshot="8927bc573acffbff39537a957b64427c.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Pesquisa de Certificados - Sistema de Certificação Energética dos Edifícios' /&gt;" SearchSteps="Selector">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target DesignTimeRectangle="274, 260, 1370, 38" ElementType="Text" FriendlyName="'Morada Opte'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' aaname='Morada &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' check:text='Morada&amp;#xD;&amp;#xA;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#xD;&amp;#xA;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#xD;&amp;#xA;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;Opte por pesquisar &amp;quot;Liberdade&amp;quot; em vez de &amp;quot;Av. da Liberdade&amp;quot;, ou &amp;#xD;&amp;#xA;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABV4AAAAqCAYAAABLNkD7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAgGSURBVHhe7d3vb5XlGQfw8x9Mh/Zki2Fsi1tGHNvCCC9GxB9zDJ3MTiUSu1TdgmwvREdGt5AcNAibMcXNWbOYptEx6qygU2gUtoo4UNxESmgmiIgUCmwpU5Rsmmy59tynPeWc09Oi2cli7OfFJ83z3Nd9Padvv7lz3blTbx8NAAAAAADqR/AKAAAAAFBnglcAAAAAgDoTvAIAAAAA1JngFQAAAACgzgSvAAAAAAB1JngFAAAAAKgzwSsAAAAAQJ0JXgEAAAAA6kzwCgAAAABQZ4JXAAAAAIA6E7wCAAAAANSZ4BUAAAAAoM4ErwAAAAAAdSZ4BQAAAACoM8ErAAAAAECdCV4BAAAAAOrsIxC8bohCLhe5ZRtqrAEAAAAA/P+VBa/DAWauIZZuPFhRVK1nWUNW92EJOwWvAAAAAMCHS43gNdPUHgNlRRX+3hVL88N1H7Hg9Z2TR+OttwbixInDcWKwf2zZeqpL9bX6AAAAAAAT26jgNZ9Pp1kXROfBysKSgbULiqdi8yl8/QgFr++cHIjd+16LBzbtj9YNB6L1yTLZ8+r0rvQ++5vqUn3aV6sfAAAAADBxjQpe560oRHP2d879OyoKh+yItstykWsqxKrG0WHn4EvtUWiaHlNSEJqbHDOzuu795ftLIema2H53Y3y+PLw9vDU6ly2ImZ9Je3MxZcaCWLVpb9neIQObCjF/6tCog6Ga9lha7Fn5Ww5sXBkL554f+bSWPz/mLG6Lnccqe5VLJ1nvWrcnlj/6eoXb1x2Me7r7o/2Zo3H3hkNxe9laqk/7avUDAAAAACau0cFrx47oXtIQuWmF2F5WWNTbGrOLM2B3REdV8Dq4tSVmpjC0sRCdG7uie31bLJ2b9ck3Rkdfqcdw8JpviClTG+OWFYVY9ciOOHUsez8jF/kLF0Xb+mzvxjXRdvP0yOWmR2Hr6Xmzgz1V31i7MpqzfdVjD/o6GiOfmxzzVrRnvVJdS8zJZ/2va48DwzXVBo7sjx/8enfc0vFqhSUP7Y9NvSfiX+/9J3637Xjc9uDptVSf9tXqBwAAAABMXKNHDSzfHKe2FeJLuYYo9FQWb19xwXAg21sVvA6fhG1si76y+lKgenpm7HDwOqMlespOnw48sihmX3xjdL5y+t2ptzfHqmlZ7eKuGCw+b43VqddlrVXfWBMLK4LXzbF67qyY/bPs/yirGxqRMCvaek+/K9ff/2pc8/O/xIJ79lRo+kVf/HLDoXhuzz/izq7X4/rsubSW6tO+Wv0AAAAAgIlr9OVaxQBzKEjNLymFnpnhS7Vm35tGEGyOQvmYgOJJ2FwsfGT0aIC+e2dFLndjrD+cnsu/UVk32nC429g2dEq1ry3mZXvndfRW1b3Pnj0txZOx1WFySX//vrjop9vj68t3Fn3jjp1x/eo9UXj4tbhr3evxw7a/xtw7Xh5ZT1J92lerHwAAAAAwcY0RvB6NAx2XR/klW0MnRi8dPjFaFXaOF2oW1y6IVdvS8zgh6f6uWP39y0dmvI4oBa9jfqNWz72xc21LNF84POO1zFjB66FD+2LqzT0x7Zbn48u3Ph9f/dELcfXKXdG5ZSCOnXwvHv7Tsfjm7TvjK9laWk91qT7tq9UPAAAAAJi4xgxeTx1sL7tka290NmVr1SMD3k/wumlxtnaG4LW3NeblczHz5tbofqk3Bg7vzWyNtiuz2g8cvB6M7iWTI5e/NAprN0dfsVdmffodYwevbxzaF5+47qk474ZnY/KNz8anbso0b4mF9+2JfW++Gw+/cDwu/MmO4vu0nupSfdpXqx8AAAAAMHGNHbwWA8yGyF3cGn29rTGneKlW6aKrqtr/cdTA9uXpEq6W6Cl7N9aogfkPnWHUwP72mJ89jxpJMF44nEkBasPVG+PcBX8Ycd53e+LHa/bFwff+HXeufy0+e9MzFeupXvAKAAAAAFQbJ3jNFC/ZuiDmXFa6VGus2g94uVZV8NqzLHuXW1wZvGZ7l6bLtUrB61jfGD6ZO9LzleFZsA+kk7qn6/oeSKMTxgle39gX53z7iZh0zdMjvrhoS9z3x/7oO/lufO9XvXHutU9VrKf6tK9WPwAAAABg4ho/eC2Fndn7oUu1xq4d3NoSM7N3UxoL0bmxK7rXt8XSuekka2N09I29r7h34+LiLNYpjS3Rsb4rOu9fFPNKs15HgtesrqfqG2tXRvOMhsiXX/RV+s35WdF8d3vxd6y6YdbIrNdxg9crHouPX9U94mu3PRePvvy32HbknfjOihfjnMbumJQprad6wSsAAAAAUO0MwWvpkq3SpVrj1w6+1B6FpukxpRhyTo6ZTYXo3n/mfcnApkLMn9pQDEenzFgQqzb1RndL6lN5EnZ03eahkQTlPY9tjY7Flw79jvz5MWdxW+zcUfskbEm6JGvS3K44+8onR3yh+em46/FXY9fgP6Pj2f646NYtce5Vp9dTvcu1AAAAAIBqZcHrxHb8+MGYOr8zzrri8SGXPx6TvvX7+PS1T8a05u6Y2tQdn2x8Is4urWdSfdpXqx8AAAAAMHEJXoedfOtI/GbdM/G5qx6Msy75bXzskrVDLk6y5/R3+F1aT3UPresp7qvVDwAAAACYuASvZU6+eaQ4OmD37j/Hrl0vjimtp7pUX6sPAAAAADCxCV4BAAAAAOpM8AoAAAAAUGeCVwAAAACAOhO8AgAAAADUmeAVAAAAAKDOBK8AAAAAAHUmeAUAAAAAqDPBKwAAAABAXR2N/wKxVddGyg7IegAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NGetAttribute.Target>
+                    </uix:NGetAttribute>
+                  </ActivityAction>
+                </uta:VerifyControlAttribute.ActivityToTest>
+                <uta:VerifyControlAttribute.ArgumentsBridgeActivity>
+                  <ActivityFunc x:TypeArguments="x:Object">
+                    <uta:ArgumentsBridge sap2010:WorkflowViewState.IdRef="ArgumentsBridge_1">
+                      <uta:ArgumentsBridge.Input>
+                        <InArgument x:TypeArguments="x:Object">
+                          <VariableValue x:TypeArguments="x:Object">
+                            <VariableValue.Variable>
+                              <Variable x:TypeArguments="x:Object" Name="_autogenerated_Result" />
+                            </VariableValue.Variable>
+                          </VariableValue>
+                        </InArgument>
+                      </uta:ArgumentsBridge.Input>
+                    </uta:ArgumentsBridge>
+                  </ActivityFunc>
+                </uta:VerifyControlAttribute.ArgumentsBridgeActivity>
+                <uta:VerifyControlAttribute.Expression>
+                  <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                </uta:VerifyControlAttribute.Expression>
+              </uta:VerifyControlAttribute>
+              <uta:VerifyControlAttribute AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Control Attribute" sap:VirtualizedContainerService.HintSize="711.2,282.4" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_2" Operator="Equality" OutputArgument="Result" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                <uta:VerifyControlAttribute.ActivityToTest>
+                  <ActivityAction>
+                    <uix:NGetAttribute Attribute="text" DisplayName="Get Attribute 'Sob o nº'" sap:VirtualizedContainerService.HintSize="333.6,208" sap2010:WorkflowViewState.IdRef="NGetAttribute_2" ScopeIdentifier="d926e989-e20c-4a3a-94f4-51c4eccbff62" Version="V1">
+                      <uix:NGetAttribute.OutUiElement>
+                        <OutArgument x:TypeArguments="ui:UiElement">
+                          <VariableReference x:TypeArguments="ui:UiElement">
+                            <VariableReference.Variable>
+                              <Variable x:TypeArguments="ui:UiElement" Name="_autogenerated_OutUiElement" />
+                            </VariableReference.Variable>
+                          </VariableReference>
+                        </OutArgument>
+                      </uix:NGetAttribute.OutUiElement>
+                      <uix:NGetAttribute.Result>
+                        <OutArgument x:TypeArguments="x:String">[sob_output]</OutArgument>
+                      </uix:NGetAttribute.Result>
+                      <uix:NGetAttribute.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.sce.pt/pesquisa-certificados/" DesignTimeRectangle="1305, 509, 339, 50" ElementType="InputBox" FriendlyName="'INPUT txtSobONum'" FullSelectorArgument="&lt;webctrl id='txtSobONum' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='txtSobONum' tag='INPUT' type='text' aaname='Sob o nº' /&gt;" Guid="d9829863-0565-4ddf-961d-f1b7d1b62946" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAVcAAAA2CAYAAABz7tpTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFMSURBVHhe7dexasMwFIbRvv872gYHsiReSnc112BhQyhO8b+d4YCkq/lD+vr5vjcAriWuAAHiChBwiOvyvLV5ntowDACcVN2sfu572uNag2kc2/I4XgDgb9XNtZ+7wPa4ruUVVoB/qX5WR7d9j2s9bbc1AJ/bd1RcAS4irgAB4goQIK4AAeIKECCuAAHiChAgrgAB4goQIK4AAeIKECCuAAHiChAgrgAB4goQIK4AAeIKECCuAAHiChAgrgAB4goQIK4AAeIKECCuAAHiChAgrgAB4goQIK4AAeIKECCuAAHiChAgrgAB4goQIK4AAeIKECCuAAHiChAgrgAB4goQIK4AAeIKECCuAAHiChDwNq7zPLXlcesDAM6rflZHt32P6/K8tWkcBRbgQ9XNtZ+vjm5nPa7rhdegyltPWwDOWX/+u7CWQ1wBuMK9/QIRjN4w2rr7LQAAAABJRU5ErkJggg==" InformativeScreenshot="9141ed78ebad5a91f87c8c4a5339abd6.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Pesquisa de Certificados - Sistema de Certificação Energética dos Edifícios' /&gt;" SearchSteps="Selector">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target DesignTimeRectangle="1305, 468, 339, 38" ElementType="Text" FriendlyName="'Sob o nº'" FullSelectorArgument="&lt;webctrl aaname='Sob o nº' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Sob o nº' tag='LABEL' type='' check:text='Sob o nº' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAVcAAAAqCAYAAAAH+hizAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAPxSURBVHhe7du/a9toAIdx/RXRdpTAUSilHUrIYhpKCQHDBQRHaCBQAqEUDqLhoB0CXo6mQ0iGgjsFQQlnOIOHknpwwYOhgQw58GBooJgMxS0U0+G4/XuvFNmR/KtO47cJxzN8hkivZbQ8kd/3lfPvP58EAJgs4goAFhBXALCAuAKABcQVACwgrgBgAXEFAAuIKwBYQFwBwALiCgAWEFcAsIC4AoAFxBUALCCuAGABcQUAC4grAFhAXAHAAotxrSvwHDleXs2B5wHg/6svru2jXeVWMrrumjA6jtwb9/Voq6jm1/S4b7vacW1Vclq6MRXd47X5xwqOTgaOA4DvkYpru/pUs2FsvMfK/1lU+U1Rha1lzZnQundzOviS/vBoVziu9W0tOFNa2tpX40NNhd/vyHF9lc91fwAwXCKuh8rPmxjOb6uRGBCJYuRo4eVh+vhIVzeuzSAr517iPr8UtW7u70klPQ4AvlcirvvKmcA4G/upAacOFaxkNOfvqdU9dqzq1qoW4p/W4fTBelBLnD+L64H5Cf5w5qd4nKdcaZxIf+v6A5gn73BsrmI++8eyZqfN95sn1Ou/5lQ9ORtX3eiN/um9Lwb17hgAuIj+J1d3VYVEiAarq/DARM/NaP3lXnf6IJxSmDVxbsdjori6U3JnlrUTTTPsamfF/AQ3wXv013HPNZPGuf4AcVxnZ8w/gt+2VTKfKwW+FsL540RMeXIFYFt6QauR11IYIvdnLW3kVT46Hhiy9htfrnPTxCi9CNQIvOj45rvw705cV1VKxdo8BYfHb+V0kPhs0njXH6AT154AN15kzHFPhQ/xsc6c64u3an48VIk5VwATlo5r6GNNhQ2vu1vgNLS7+vtzZ8yJyv6QOMZPgLefvzV/D59zbb7yzLWzCt6nj58a9/o950KdaYFqz/GK3/d9rdozdgsAsKY/rl0nah3tKe9ndS2M7Ix5Ao3iNGqhKj63Fs7Njhg3LIKRca/fe84Ydt3o+LCYA8DkjYhrQmNbiyZabrTYNSp+5if/Lzbjmrx+7zmDuAK4Irpxbb/2NXcvo51a/6B08CYwLRAuKP3IaQHiCuAHO3tyfZ+Pnk5vPx2wGv/ZRC2cg/WL0bnzLWh5ChpnY7oLWoP208YuuqBFXAFcttS0QOPVcjS/mnxDqxTk9PBuuC0qGclzbsWazmoz3oq16YX7Xae0/nrUAtLFtmIRVwCXrW/OtVXf085aNt6Ab0zf0eLaM5U725i6xnyJ4EH/SwSblVF7XDsu8BIBcQVwycZb0AIAnAtxBQALiCsAWEBcAcAC4goAFhBXALCAuAKABcQVACwgrgBgAXEFAAuIKwBM3Cf9B/cIUoogRtojAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NGetAttribute.Target>
+                    </uix:NGetAttribute>
+                  </ActivityAction>
+                </uta:VerifyControlAttribute.ActivityToTest>
+                <uta:VerifyControlAttribute.ArgumentsBridgeActivity>
+                  <ActivityFunc x:TypeArguments="x:Object">
+                    <uta:ArgumentsBridge sap2010:WorkflowViewState.IdRef="ArgumentsBridge_2">
+                      <uta:ArgumentsBridge.Input>
+                        <InArgument x:TypeArguments="x:Object">
+                          <VariableValue x:TypeArguments="x:Object">
+                            <VariableValue.Variable>
+                              <Variable x:TypeArguments="x:Object" Name="_autogenerated_Result" />
+                            </VariableValue.Variable>
+                          </VariableValue>
+                        </InArgument>
+                      </uta:ArgumentsBridge.Input>
+                    </uta:ArgumentsBridge>
+                  </ActivityFunc>
+                </uta:VerifyControlAttribute.ArgumentsBridgeActivity>
+                <uta:VerifyControlAttribute.Expression>
+                  <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                </uta:VerifyControlAttribute.Expression>
+              </uta:VerifyControlAttribute>
+              <uta:VerifyControlAttribute AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Control Attribute" sap:VirtualizedContainerService.HintSize="711.2,282.4" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_3" Operator="Equality" OutputArgument="Result" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                <uta:VerifyControlAttribute.ActivityToTest>
+                  <ActivityAction>
+                    <uix:NGetAttribute Attribute="text" DisplayName="Get Attribute 'Artigo Matricial nº'" sap:VirtualizedContainerService.HintSize="333.6,208" sap2010:WorkflowViewState.IdRef="NGetAttribute_3" ScopeIdentifier="d926e989-e20c-4a3a-94f4-51c4eccbff62" Version="V1">
+                      <uix:NGetAttribute.OutUiElement>
+                        <OutArgument x:TypeArguments="ui:UiElement">
+                          <VariableReference x:TypeArguments="ui:UiElement">
+                            <VariableReference.Variable>
+                              <Variable x:TypeArguments="ui:UiElement" Name="_autogenerated_OutUiElement" />
+                            </VariableReference.Variable>
+                          </VariableReference>
+                        </OutArgument>
+                      </uix:NGetAttribute.OutUiElement>
+                      <uix:NGetAttribute.Result>
+                        <OutArgument x:TypeArguments="x:String">[artigomatricial_output]</OutArgument>
+                      </uix:NGetAttribute.Result>
+                      <uix:NGetAttribute.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.sce.pt/pesquisa-certificados/" DesignTimeRectangle="271, 601, 206, 50" ElementType="InputBox" FriendlyName="'INPUT txtArtMatricial'" FullSelectorArgument="&lt;webctrl id='txtArtMatricial' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='txtArtMatricial' tag='INPUT' type='text' aaname='Artigo Matricial nº' /&gt;" Guid="37ef3b3e-5643-43c3-8efe-81891b2d0a56" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANIAAAA2CAYAAACyTMfWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEkSURBVHhe7da7asNAFEXR/P8/SgIJ3NhqgvuJ72ArGNlBxKdcxYI7j3Yz83X9PjXgM0KCACFBwFNI62Vp8zy1YRiAP1Qn1csupNqcxrGt599D4LXqpPdyj2kLqRcmIjiseqluat5CqufqMQPHPLoREnxASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAgQEgQICQI2IU0z1Nbz8vTJeC96qW6qXkLab0sbRpHMcEB1Unv5dZNrbeQ+uFtswqr5wp4r//g7hHtQgL+49R+AFegpYjR4huBAAAAAElFTkSuQmCC" InformativeScreenshot="ab22052631db06c5a961225eb23ffa7e.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Pesquisa de Certificados - Sistema de Certificação Energética dos Edifícios' /&gt;" SearchSteps="Selector">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target DesignTimeRectangle="271, 559, 206, 38" ElementType="Text" FriendlyName="'Artigo Matricial nº'" FullSelectorArgument="&lt;webctrl aaname='Artigo Matricial nº' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Artigo Matricial nº' tag='LABEL' type='' check:text='Artigo Matricial nº' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NGetAttribute.Target>
+                    </uix:NGetAttribute>
+                  </ActivityAction>
+                </uta:VerifyControlAttribute.ActivityToTest>
+                <uta:VerifyControlAttribute.ArgumentsBridgeActivity>
+                  <ActivityFunc x:TypeArguments="x:Object">
+                    <uta:ArgumentsBridge sap2010:WorkflowViewState.IdRef="ArgumentsBridge_3">
+                      <uta:ArgumentsBridge.Input>
+                        <InArgument x:TypeArguments="x:Object">
+                          <VariableValue x:TypeArguments="x:Object">
+                            <VariableValue.Variable>
+                              <Variable x:TypeArguments="x:Object" Name="_autogenerated_Result" />
+                            </VariableValue.Variable>
+                          </VariableValue>
+                        </InArgument>
+                      </uta:ArgumentsBridge.Input>
+                    </uta:ArgumentsBridge>
+                  </ActivityFunc>
+                </uta:VerifyControlAttribute.ArgumentsBridgeActivity>
+                <uta:VerifyControlAttribute.Expression>
+                  <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                </uta:VerifyControlAttribute.Expression>
+              </uta:VerifyControlAttribute>
+              <uta:VerifyControlAttribute AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Control Attribute" sap:VirtualizedContainerService.HintSize="711.2,282.4" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_4" Operator="Equality" OutputArgument="Result" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                <uta:VerifyControlAttribute.ActivityToTest>
+                  <ActivityAction>
+                    <uix:NGetAttribute Attribute="text" DisplayName="Get Attribute 'Fração Autónoma'" sap:VirtualizedContainerService.HintSize="333.6,208" sap2010:WorkflowViewState.IdRef="NGetAttribute_4" ScopeIdentifier="d926e989-e20c-4a3a-94f4-51c4eccbff62" Version="V1">
+                      <uix:NGetAttribute.OutUiElement>
+                        <OutArgument x:TypeArguments="ui:UiElement">
+                          <VariableReference x:TypeArguments="ui:UiElement">
+                            <VariableReference.Variable>
+                              <Variable x:TypeArguments="ui:UiElement" Name="_autogenerated_OutUiElement" />
+                            </VariableReference.Variable>
+                          </VariableReference>
+                        </OutArgument>
+                      </uix:NGetAttribute.OutUiElement>
+                      <uix:NGetAttribute.Result>
+                        <OutArgument x:TypeArguments="x:String">[fracao_output]</OutArgument>
+                      </uix:NGetAttribute.Result>
+                      <uix:NGetAttribute.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.sce.pt/pesquisa-certificados/" DesignTimeRectangle="482, 601, 206, 50" ElementType="InputBox" FriendlyName="'INPUT txtFracAutonoma'" FullSelectorArgument="&lt;webctrl id='txtFracAutonoma' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='txtFracAutonoma' tag='INPUT' type='text' aaname='Fração Autónoma' /&gt;" Guid="014a397c-5d65-465e-9ace-c9aec6db16c8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANIAAAA2CAYAAACyTMfWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEmSURBVHhe7daxisMwFEXB/P8/2gYb0iRulu2VPIOFDQlZsrecYkDSU3uQLr8/1wb8j5AgQEgQcAppvS9tnqc2DAPwRjVSrRzb6SHVYBrHtt7OF4CzamRr5RBTD2mrTETwJ9VKNbPve0j1ZO1r4LNjM0KCLwkJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAEvQ5rnqa23pQ+A96qVambf95DW+9KmcRQTfFCNbK08m9nPekjbheegKqsnC3ht+70dIiqnkIBvXNsD5sel8voBzgcAAAAASUVORK5CYII=" InformativeScreenshot="1bf4189ed505a061ad01a299675d989f.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Pesquisa de Certificados - Sistema de Certificação Energética dos Edifícios' /&gt;" SearchSteps="FuzzySelector, Image">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target DesignTimeRectangle="482, 559, 206, 38" ElementType="Text" FriendlyName="'Fração Autónoma'" FullSelectorArgument="&lt;webctrl aaname='Fração Autónoma' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Fração Autónoma' tag='LABEL' type='' check:text='Fração Autónoma' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NGetAttribute.Target>
+                    </uix:NGetAttribute>
+                  </ActivityAction>
+                </uta:VerifyControlAttribute.ActivityToTest>
+                <uta:VerifyControlAttribute.ArgumentsBridgeActivity>
+                  <ActivityFunc x:TypeArguments="x:Object">
+                    <uta:ArgumentsBridge sap2010:WorkflowViewState.IdRef="ArgumentsBridge_4">
+                      <uta:ArgumentsBridge.Input>
+                        <InArgument x:TypeArguments="x:Object">
+                          <VariableValue x:TypeArguments="x:Object">
+                            <VariableValue.Variable>
+                              <Variable x:TypeArguments="x:Object" Name="_autogenerated_Result" />
+                            </VariableValue.Variable>
+                          </VariableValue>
+                        </InArgument>
+                      </uta:ArgumentsBridge.Input>
+                    </uta:ArgumentsBridge>
+                  </ActivityFunc>
+                </uta:VerifyControlAttribute.ArgumentsBridgeActivity>
+                <uta:VerifyControlAttribute.Expression>
+                  <InArgument x:TypeArguments="x:String">[""]</InArgument>
+                </uta:VerifyControlAttribute.Expression>
+              </uta:VerifyControlAttribute>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="0777fb10738cb60c7eea2242725edfb6.png" Selector="&lt;html app='chrome.exe' title='Pesquisa de Certificados - Sistema de Certificação Energética dos Edifícios'/&gt;" Url="https://www.sce.pt/pesquisa-certificados/" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>
