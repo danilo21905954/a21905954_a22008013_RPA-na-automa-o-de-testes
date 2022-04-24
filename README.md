@@ -20,3 +20,5 @@ Agora carregue no botão azul onde diz "DOWNLOAD UI PATH STUDIO"
 3- Siga os passo da instalação
 
 4- Após instalado
+
+![image](https://user-images.githubusercontent.com/61801971/164993245-8700516e-0dd3-422c-94c4-8b8e499630e9.png)
