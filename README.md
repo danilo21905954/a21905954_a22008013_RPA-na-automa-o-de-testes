@@ -25,36 +25,42 @@ Agora carregue no botão azul onde diz "DOWNLOAD UI PATH STUDIO"
 
 ![image](https://user-images.githubusercontent.com/61801971/164993659-a54ab710-ed3e-4836-8006-d1df169fe8c3.png)
 
-Nesta aba click em Clone or Check Out, como indicado na figura abaixo:
+6- Nesta aba carregue em Clone or Check Out, como indicado na figura abaixo:
 
 ![image](https://user-images.githubusercontent.com/61801971/164993739-ef8f55b5-cc32-4ccd-9c03-e146bba56e2a.png)
 
-Depois selecione a primeira opção, "Clone Repository":
+7- Depois selecione a primeira opção, "Clone Repository":
 
 ![image](https://user-images.githubusercontent.com/61801971/164993769-4b457936-866c-4cd9-8e5e-91b62ccb9447.png)
 
-No popup que aparecer coloque o seguinte link:
+8- No popup que aparecer coloque o seguinte link e carregue em open:
 https://github.com/danilo21905954/a21905954_a22008013_RPA-na-automa-o-de-testes
 
 ![image](https://user-images.githubusercontent.com/61801971/164993819-2d3ab075-6e1d-48f2-8b9d-2ebfbf7f2d19.png)
 
-Depois, pode ser que apareça a mensagem abaixo para autorizar que a UI Path tenha acesso ao seu Git.
+9- Depois, pode ser que apareça a mensagem abaixo para autorizar que a UI Path tenha acesso ao seu Git.
 
 ![image](https://user-images.githubusercontent.com/61801971/164993245-8700516e-0dd3-422c-94c4-8b8e499630e9.png)
 
-Após aceitar encontrará uma interface semelhante a esta:
+10- Após aceitar encontrará uma interface semelhante a esta:
 
 ![image](https://user-images.githubusercontent.com/61801971/164993921-6452cecf-e3c8-4128-a36c-cfdb6ad198af.png)
 
-Para colocar o RPA em execução temos que realizar uma única mudança que é indicar o caminho para o ficheiro de input, para isso baixe o ficheiro DRM.zip que se encontra nesse repositório, descompacte ele e coloque a pasta DRM no seu ambiente de trabalho.
+11- Para colocar o RPA em execução temos que realizar uma única mudança que é indicar o caminho para o ficheiro de input, para isso baixe o ficheiro DRM.zip que se encontra nesse repositório, descompacte ele e coloque a pasta DRM no seu ambiente de trabalho.
 
-Abra novamente a interface do UIPath Studio, e na parte inferior, caso não esteja aberto, carregue em "Variables":
-![image](https://user-images.githubusercontent.com/61801971/164994152-bffd10e5-27b7-4ac7-9b29-374da5d5cd9d.png)
+12- Dentro da pasta DRM há um ficheiro que terá de trocar o nome consoante o dia atual. Basta trocar apenas os numeros finais que são referentes ao ano, mês e dia. Seguir nomenclatura "DMR_CertificadosEnergeticos_YYYYMMDD", onde "YYYY" representa o ano com 4 digitos, "MM" representa o mês com 2 digitos e "DD" representa o dia com dois digitos.
 
-Onde está a variável com o nome Path será necessário alterar o valor default para o caminho do ficheiro:
+12- Abra novamente a interface do UIPath Studio, e no painel lateral esquerdo carregue no ficheiro "MAIN"
+
+![image](https://user-images.githubusercontent.com/61801971/164994593-c2e86bd7-710a-4907-af08-404680ddd793.png)
+
+14- Na parte inferior, caso não esteja aberto, carregue em "Variables":
+![image](https://user-images.githubusercontent.com/61801971/164994624-1982da62-e58c-486b-b548-71557d782dd2.png)
+
+13- Onde está a variável com o nome Path será necessário alterar o valor default para o caminho do ficheiro input que se encontra dentro da pasta que extraimos:
 ![image](https://user-images.githubusercontent.com/61801971/164994258-17bd7da0-4517-46c6-ab9f-9e62d5478b52.png)
 
-Não se esqueça da contra barra ao fim.
+Veja na imagem que não é preciso cocolar o nome do arquivo e não se esqueça de colocar a contra barra ao fim!!
 
-Agora basta carregar na seta por debaixo do botão play no canto superior esquerdo e carregue em "RUN"
+14- Agora basta carregar na seta por debaixo do botão play no canto superior esquerdo e carregue em "RUN"
 ![image](https://user-images.githubusercontent.com/61801971/164994316-99db11ea-095c-415e-b462-308c37edeb9b.png)
