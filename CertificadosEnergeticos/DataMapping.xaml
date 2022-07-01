@@ -1,8 +1,8 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="DataTableMapping" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_dt_Register" Type="InArgument(sd:DataTable)" />
-    <x:Property Name="out_DT_ValidMap" Type="OutArgument(sd:DataTable)" />
-    <x:Property Name="out_DT_InvalidMAp" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="out_dt_ValidMap" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="out_dt_InvalidMAp" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <this:DataTableMapping.in_dt_Register>
     <InArgument x:TypeArguments="sd:DataTable" />
@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1129.6,7357.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1128,7357.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DataTableMapping_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="30">
@@ -83,14 +83,10 @@
   </sap:WorkflowViewStateService.ViewState>
   <Sequence sap2010:Annotation.AnnotationText="According to the Mapeamento.xls file, it goes through all the datarows in the INPUT datatable and check the values in Distrito and Concelho columns doing the mapping for the right value" DisplayName="DataTableMapping" sap:VirtualizedContainerService.HintSize="475.2,7292.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="sd:DataTable" Name="DT_MapConcelho" />
-      <Variable x:TypeArguments="sd:DataTable" Name="DT_MapDistrito" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_MapConcelho" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_MapDistrito" />
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="ForEachKey" />
-      <Variable x:TypeArguments="x:String" Name="Path">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">Data\</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="Data\" Name="Path" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -122,7 +118,7 @@
     <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="MENSAGEM" DataTable="[in_dt_Register]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="433.6,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
     <Assign sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="Assign_24">
       <Assign.To>
-        <OutArgument x:TypeArguments="sd:DataTable">[out_DT_ValidMap]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable">[out_dt_ValidMap]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="sd:DataTable">[in_dt_Register.Clone]</InArgument>
@@ -130,7 +126,7 @@
     </Assign>
     <Assign sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="Assign_27">
       <Assign.To>
-        <OutArgument x:TypeArguments="sd:DataTable">[out_DT_InvalidMAp]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable">[out_dt_InvalidMAp]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="sd:DataTable">[in_dt_Register.Clone]</InArgument>
@@ -149,7 +145,7 @@
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DT_MapDistrito]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="358.4,1916" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_MapDistrito]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="358.4,1916" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
@@ -405,7 +401,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[CurrentRow.ItemArray]" DataTable="[out_DT_ValidMap]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[CurrentRow.ItemArray]" DataTable="[out_dt_ValidMap]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
                   </Sequence>
                 </If.Then>
                 <If.Else>
@@ -424,7 +420,7 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="MENSAGEM" DataTable="[out_DT_ValidMap]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="433.6,188" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1" />
-    <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="MENSAGEM" DataTable="[out_DT_InvalidMAp]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="433.6,188" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_2" />
+    <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="MENSAGEM" DataTable="[out_dt_ValidMap]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="433.6,188" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1" />
+    <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="MENSAGEM" DataTable="[out_dt_InvalidMAp]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="433.6,188" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_2" />
   </Sequence>
 </Activity>
